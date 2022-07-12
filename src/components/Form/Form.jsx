@@ -1,7 +1,7 @@
 import React from "react";
 import "./Form.css";
 
-export const Form = ({ handleInputChange, handleFormSubmit, todo, todos, deleteTodos }) => {
+export const Form = ({ handleInputChange, handleFormSubmit, todos, deleteTodos }) => {
   return (
     <div className="container">
       <div className="row">
@@ -58,19 +58,20 @@ export const Form = ({ handleInputChange, handleFormSubmit, todo, todos, deleteT
                     role="alert"
                     aria-live="assertive"
                     aria-atomic="true"
+                    key={todo.id}
                   >
                     <div className="toast-header">
-                      <strong className="me-auto" key={todo.title}>
+                      <strong className="me-auto">
                         {todo.title}
                       </strong>
                       <small>11 mins ago</small>
                       <i
                         style={{ cursor: "pointer" }}
                         className="bi bi-trash mx-2"
-                        onClick={deleteTodos}
+                        onClick={() => deleteTodos(todo.id)}
                       ></i>
                     </div>
-                    <div className="toast-body" key={todo.description}>
+                    <div className="toast-body">
                       {todo.description}
                     </div>
                   </div>

@@ -92,8 +92,8 @@ export const Footer = () => {
 
     {/* <!-- Copyright --> */}
     <div className="text-center p-3" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-      © 2021 Copyright:
-      <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2022 Copyright:
+      <a className="text-white" href="https://mdbootstrap.com/">  ankitbisen288@gmail.com</a>
     </div>
     {/* <!-- Copyright --> */}
   </footer>

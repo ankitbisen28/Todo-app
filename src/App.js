@@ -53,20 +53,24 @@ function App() {
       ]);
     }
 
-    // clear out the input box
-    setTodo("");
+    // clear all input values in the form
+    e.target.reset();
   }
+  
 
-  const deleteTodos = () => {
-    let deleted = todos.splice(0,1);
-    setTodos(deleted)
-    console.log(deleted)
+  const deleteTodos = (id) => {
+    setTodos(current =>
+      current.filter(todo => {
+        // 👇️ remove object that has id equal to 2
+        return todo.id !== id;
+      }),
+    );
   }
 
   return (
     <>
     <NavBar />
-    <Form handleInputChange={handleInputChange} deleteTodos={deleteTodos} handleFormSubmit={handleFormSubmit} todo={todo} todos={todos}/>
+    <Form handleInputChange={handleInputChange} deleteTodos={deleteTodos} handleFormSubmit={handleFormSubmit} todos={todos}/>
     <Footer />
     </>
   );
